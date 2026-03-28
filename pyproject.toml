@@ -1,0 +1,36 @@
+[project]
+name = "folder-organizer"
+version = "1.0.0"
+description = "A CLI tool that organizes files into categorized subfolders by file type."
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "gbvk312"}]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+
+[tool.ruff]
+target-version = "py39"
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "F",    # pyflakes
+    "I",    # isort
+    "N",    # pep8-naming
+    "UP",   # pyupgrade
+    "B",    # flake8-bugbear
+    "SIM",  # flake8-simplify
+    "RUF",  # ruff-specific
+]
+ignore = [
+    "E501",   # line too long — handled by formatter
+    "SIM108", # ternary operator — readability preference
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
